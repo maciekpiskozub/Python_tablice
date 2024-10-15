@@ -1,0 +1,37 @@
+notatka wwstwp
+
+1. klasa - klasa jest strukturą programistyczną służącą do definiowania obiektów okresla ona zachowania obiektów  które będe tworzone na jej podstawie, klasa stanowi szablon na podstawie którego są tworzone konkretne instancje czyli obiekty
+
+
+
+2. obiekt - instancja klasy powstanie na podstawie zdefiniownego szablonu(klasy) i reprezentuje konkretne elementy systemu. obiekty posiadają swoje unikalne cechy(pola) oraz mogą wykonywać okreslone czyności (metody)
+
+
+
+3. pole - pole to zmiena przypisana do obiektu która przechowuje jego stan lub ceche pola opisują stan obiektu i są definowane w klasie moga mieć rózne typy danych i są dostępne dla róznych metod klasy
+
+
+
+4. metoda - metoda to funkcja związana z klasą która okesla działanie obiektu danej klasy metody definują operaje jakie mogą byc wykonwyane na obiektach danej klasy są one wywoływane na obiektach i operują na ich polach
+
+
+
+5. modyfikatory dostepu - okreslaja jakie elementy klasy są widoczne poza nią 3 podstawowe modyfikarory 
+  -public elementy są dostepne wewnątrz klasy jak i poza nią
+  -private elementy są dostepne tylko wewnątrz klasy i nie sa widoczne dla obiektów
+  -protetcet elementy śą dostepne wewnątrz klasy oraz wewnątrz klas dziedziczych
+
+
+
+6. gettery i settery - metody umozliwiające odczytanie (getter) i ustawienie settery wartości prywatnych pól obiektów. stosowanie getterów i setterów pomaga w kątroli dostępu do pól oraz umozliwia dodanie dodatkowej logiki przy odczycie lub zapisie danych
+
+
+
+7. constructor - klasy to spycialna metoda której gównym zadaniem jest inicjalizacja obiektów po utworzeniu go constructor jest wywoływany automatycznie podaczas tworzenia nowej instacji klasy jesli nie zdefinujemy własnego constructora java dostarczy constructor domyślny  który nie przyjmuje żadnych argumentów i może inicjalizować pola obiektu wartościamy domyslnymi 
+
+
+
+8.construtor parametryczny - spycialny rodzaj constructora który przyjmuje parametry podczas swojego wywołania oznacza to że podaczas tworzenia instancji kalsy mozemy przekazac mu pewne wartości które zostaną do zainicjalizowania pól tego obiektu
+
+
+

@@ -1,0 +1,18 @@
+git
+1) git init Sawa
+2) Utworzyłem
+3) git add Sawa.txt
+   git commit -m "Pierwszy commit"
+   git log --oneline
+4) git status
+   git add Sawa.txt
+   git commit -m "Drugi commit"
+   git log --oneline 
+5) git status
+   git add Sawa.txt
+   git log --oneline 
+6) git log --oneline
+7) git diff fbb88ef..6a6d6ba
+8) git checkout 6a6d6ba
+9) Zrobiłem
+10) git checkout master 

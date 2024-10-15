@@ -1,0 +1,86 @@
+CREATE TABLE pracownik(
+    imie VARCHAR(15) NOT NULL,
+    nazwisko VARCHAR(15) NOT NULL,
+    dzial_pracownika VARCHAR(15) NOT NULL,
+    id_pracownika INT NOT NULL,
+    pesel_pracownika CHAR(11) NOT NULL,
+    data_urodzin DATE,
+    adres_email VARCHAR(255) NOT NULL,
+    PRIMARY KEY (id_pracownika),
+    UNIQUE (id_pracownika)
+    )
+CREATE TABLE dzial(
+    nazwa_dzialu VARCHAR(15) NOT NULL,
+    nr_dzialu INT NOT NULL,
+    pesel_kierownika VARCHAR(15) NOT NULL,
+    PRIMARY KEY (nr_dzialu),
+    UNIQUE (nr_dzialu),
+    FOREIGN KEY (pesel_kierownika) REFERENCES PRACOWNIK(pesel_pracownika)
+    ); 
+
+
+SELECT * FROM `customer` WHERE active=0 or last_name like '%m';
+
+tytuly, opisy ratingi i dlugosc 3 h lub wiecej
+
+SELECT title,description,rating,length FROM film WHERE length<180;
+
+SELECT title,description,rating,round(length/60, 1) AS time FROM film WHERE length<180; - pokazanie czasu w godzinach jako "time"
+ceil(length/60)- zaokrągla w górę (przeciwieństwo floor)
+
+id kategorii ma byc wieksze niz 4, ma sie zaczynac na c, s lub ts
+
+SELECT category_id, name FROM category WHERE category_id>4 AND (name LIKE 'c%' OR name LIKE 's%' OR name LIKE 't%' );
+
+left(name, 1) IN (c,s,t) funkcja zwracajaca pierwsza literke od lewej a pozniej sprawdza czy jest rowna c,s,t
+
+zwraca nazwisko aktora alfabetycznie, nie powtarzajac się
+SELECT DISTINCT last_name from actor ORDER BY last_name asc;
+
+zwraca tytuly wszystkich filmow z ratingiem: g,pg-13 lub nv-17
+SELECT title,rating from film WHERE rating IN('G','PG-13','NV-17');
+
+wyswietl wszystkie filmy wyporzyczone w lutym 2006 uzywajac funkcji BETWEEN
+
+SELECT * 
+FROM rental 
+WHERE rental_date BETWEEN '2006-02-01' AND '2006-02-28';
+
+SELECT * FROM payment WHERE amount BETWEEN 0.50 AND 1.50;
+
+wypisz wszystkie platnosci klientow nieaktywnych
+SELECT *
+FROM payment
+WHERE customer_id IN(
+    SELECT customer_id FROM customer WHERE active=0);
+
+wypisz wszystkich klientow u ktorych w imieniu/nazwisku wyspepuje litera 'c'
+
+SELECT *
+FROM customer
+WHERE first_name LIKE '%c%' OR last_name LIKE '%c%';
+
+wypisz wszystkie platnosci na taka kwote jak najwieksza platnosc (uzyj podzapytania ktore sprawdzi jaka jest najwieksza platnosc)
+
+SELECT *
+FROM payment
+WHERE amount IN(SELECT MAX(amount)FROM payment);
+
+wypisz aktorow ktorzy nie grali w filmie o id 32, uzyj podzapytania i operatora IN
+
+SELECT *
+FROM actor
+WHERE actor_id NOT IN(SELECT actor_id FROM film_actor WHERE film_id=32);
+ 
+zooweemama
+
+Podaj identyfikatory i tytuły filmów, identyfikatory sklepów oraz datę wypożyczenia 10 ostatnio wypożyczonych filmów.
+
+SELECT DISTINCT film.film_id, title, store_id, rental_date
+FROM film
+JOIN inventory ON film.film_id=inventory.film_id 
+JOIN rental ON inventory.inventory_id=rental.inventory_id 
+ORDER BY rental_date DESC LIMIT 10;
+
+
+ 

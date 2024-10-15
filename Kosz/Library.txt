@@ -1,0 +1,26 @@
+Library
+ - Books
+ - Employess
+ -
+Employee
+ -id pracownika
+ -imie
+ -nazwisko
+ -pesel(*)
+ -phone
+Copy
+ -book
+ -id_copy
+ -stan
+Book
+ -isbn
+ -title
+ -author
+ -category
+ -issue_date
+ -publisher
+ -copies
+Client
+ -id
+ -name
+ -
