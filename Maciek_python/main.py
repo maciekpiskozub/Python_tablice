@@ -18,7 +18,7 @@ class Tablica:
     def minimum(self):
         min = self.tablica[0]
         for i in range(1, len(self.tablica)):
-            if self.tablica[i] < mini:
+            if self.tablica[i] < min:
                 mini = self.tablica[i]
         return min
 
@@ -26,11 +26,11 @@ class Tablica:
     def maksimum2(self):
         maks1 = self.maksimum()
 
-        maks2 = None
+        maks2 = 0
 
         for i in range(1, len(self.tablica)):
             if self.tablica[i] != maks1:
-                if self.tablica[i] > maks2
+                if self.tablica[i] > maks2:
                     maks2 = self.tablica[i]
         return maks2
 
